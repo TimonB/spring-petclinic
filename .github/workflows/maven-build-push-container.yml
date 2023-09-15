@@ -25,6 +25,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'corretto'
+          cache: 'maven'
 
       - name: Build with Maven Wrapper
         run: ./mvnw --batch-mode spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName="containers.github.bhs-world.com/devops/lunch-learn:latest"
@@ -32,12 +33,12 @@ jobs:
       - name: Show images
         run: docker images
 
-      - name: Login to GitHub Container registry
-        uses: docker/login-action@v2
-        with:
-          registry: containers.github.bhs-world.com
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Login to GitHub Container registry
+#        uses: docker/login-action@v2
+#        with:
+#          registry: containers.github.bhs-world.com
+#          username: ${{ github.actor }}
+#          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Show images
         run: docker push containers.github.bhs-world.com/devops/lunch-learn:latest
