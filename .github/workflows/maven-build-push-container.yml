@@ -40,5 +40,5 @@ jobs:
 #          username: ${{ github.actor }}
 #          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Show images
-        run: docker push containers.github.bhs-world.com/devops/lunch-learn:latest
+#      - name: Show images
+#        run: docker push containers.github.bhs-world.com/devops/lunch-learn:latest

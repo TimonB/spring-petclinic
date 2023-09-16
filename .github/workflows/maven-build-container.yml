@@ -10,7 +10,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +24,7 @@ jobs:
 
       - name: Build with Maven Wrapper
         run: ./mvnw spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName=springio/gs-spring-boot-docker
+
 
       - name: Run tests
         run: docker images
