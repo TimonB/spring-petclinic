@@ -27,18 +27,10 @@ jobs:
       - name: Run tests
         run: ./mvnw -B test
 
-      - name: Run tests
-        run: ls -l
-
-      - name: Run tests
-        run: ls -l target/
-
-      - name: Run tests
-        run: pwd
-
       - name: Upload surfire reports
         uses: actions/upload-artifact@v1
         with:
           name: Surfire reports
           path: target/surefire-reports/
-        if: ${{ always() }}
+#        if: ${{ always() }}
+        if: ${{ failure() }}
