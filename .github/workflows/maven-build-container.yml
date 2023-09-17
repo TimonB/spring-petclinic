@@ -1,11 +1,12 @@
 name: Build and test Spring PetClinic
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/'
   workflow_dispatch:
-
-#  push:
-#    branches:
-#      - main
 
 
 jobs:

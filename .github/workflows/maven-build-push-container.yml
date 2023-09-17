@@ -3,7 +3,9 @@ name: Containerize application
 on:
   push:
     branches:
-    - main
+      - main
+    paths:
+      - 'src/'
   workflow_dispatch:
 
 
