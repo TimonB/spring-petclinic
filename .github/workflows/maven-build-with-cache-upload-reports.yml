@@ -27,6 +27,12 @@ jobs:
       - name: Run tests
         run: ./mvnw -B test
 
+      - name: Run tests
+        run: ls -l
+
+      - name: Run tests
+        run: ls -l target/
+
       - name: Upload surfire reports
         uses: actions/upload-artifact@v1
         with:
