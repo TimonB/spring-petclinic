@@ -1,4 +1,4 @@
-name: Build and test Spring PetClinic
+name: Build, test, upload test results
 
 on:
   push:
