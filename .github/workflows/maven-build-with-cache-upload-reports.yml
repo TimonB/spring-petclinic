@@ -1,0 +1,35 @@
+name: Build and test Spring PetClinic
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/'
+
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'corretto'
+          cache: 'maven'
+
+      - name: Build with Maven Wrapper
+        run: ./mvnw -B package -DskipTests
+
+      - name: Run tests
+        run: ./mvnw -B test
+
+      - name: Upload surfire reports
+        uses: actions/upload-artifact@v1
+        with:
+          name: Surfire reports
+          path: target/surfire-reports
+        if: ${{ always() }}
