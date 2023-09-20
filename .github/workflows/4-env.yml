@@ -1,4 +1,4 @@
-name: Env variables
+name: 4. Env variables
 
 on:
   workflow_dispatch
@@ -19,3 +19,11 @@ jobs:
 
       - name: "echo Operating System"
         run: echo $RUNNER_OS
+
+      - name: "Echo Pizza emojis"
+        run: echo 🍕🍕🍕🍕🍕🍕🍕🍕🍕🍕
+        if: contains(env.FOOD, 'Pizza')
+
+      - name: "Echo cookie emojis"
+        run: echo 🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪
+        if: contains(env.FOOD, 'Cookies')
