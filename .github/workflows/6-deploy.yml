@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: 'bhs-lunch-learn'
+  AZURE_WEBAPP_NAME: 'lunch-learn-bhs'
 
 jobs:
   build:
