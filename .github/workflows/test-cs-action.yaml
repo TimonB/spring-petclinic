@@ -1,0 +1,30 @@
+---
+name: 'Build ubuntu 2204 and push it to cloudsmith'
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+ 
+ 
+  build:
+    runs-on: ubuntu-latest
+    name: 'Build container image'
+    permissions:
+      contents: read
+      id-token: write
+ 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+ 
+      - name: Install Cloudsmith CLI
+        uses: TimonB/cloudsmith-cli-action@main
+        with:
+          oidc-namespace: 'bhs'
+          oidc-service-slug: 'coding-community-cicd'
+ 
+
+
+
+
