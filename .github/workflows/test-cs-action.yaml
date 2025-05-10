@@ -12,6 +12,7 @@ jobs:
     name: 'Build container image'
     permissions:
       contents: read
+      id-token: none
  
     steps:
       - name: Checkout
