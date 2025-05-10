@@ -19,12 +19,11 @@ jobs:
         uses: actions/checkout@v4
  
       - name: Install Cloudsmith CLI
-        uses: TimonB/cloudsmith-cli-action@main
+        uses: TimonB/cloudsmith-cli-action@master
         with:
           oidc-namespace: 'bhs'
           oidc-service-slug: 'coding-community-cicd'
  
-
 
 
 
